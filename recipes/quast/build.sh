@@ -18,6 +18,8 @@ mkdir -p $QUAST_HOME
 
 python "setup.py" install_full
 
+make CFLAGS="-Wall -Wextra -Wunused -mpopcnt -std=gnu++0x -fopenmp -I${PREFIX}/include" -C ${QUAST_HOME}/quast_libs/gnuplot
+
 cp -R $SRC_DIR/*quast.py $QUAST_HOME/
 cp -R $SRC_DIR/icarus.py $QUAST_HOME/
 
